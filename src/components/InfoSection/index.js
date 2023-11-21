@@ -237,7 +237,7 @@ const InfoSection = () => {
                 <TestimonialCard
                   name="Shiv S"
                   designation="Co-Founder Magik Labs"
-                  testimonial="“Managing my own portfolio is helpful and well designed. What’s really interesting is watching the whales though. No one else has made whale tracking so simple.”"
+                  testimonial="“Managing my own portfolio is helpful and well designed. What’s really interesting is watching the whales though.”"
                 />
               </SwiperSlide>
             </Swiper>
