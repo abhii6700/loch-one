@@ -1,5 +1,7 @@
 import './App.css';
 import { ThemeProvider, createTheme, styled } from '@mui/material';
+import LandingPage from './pages/LandingPage';
+import { Toaster } from 'react-hot-toast';
 
 const theme = createTheme({
   palette: {
@@ -19,6 +21,9 @@ const theme = createTheme({
     white: {
       main: '#FFFFFF',
     },
+    grey: {
+      main: '#B0B1B3',
+    },
   },
   typography: {
     button: {
@@ -26,7 +31,7 @@ const theme = createTheme({
       textTransform: 'capitalize',
     },
     fontSize: 14,
-    fontFamily: ['Montserrat', 'Rubik', 'Open Sans'].join(','),
+    fontFamily: ['Montserrat', 'Rubik', 'Open Sans', 'Inter'].join(','),
     extraLarge: {
       fontFamily: 'Rubik',
       fontSize: '80px',
@@ -36,17 +41,18 @@ const theme = createTheme({
       },
     },
     large: {
-      fontFamily: 'Rubik',
-      fontSize: '48px',
-      fontWeight: 700,
+      fontFamily: 'Inter',
+      fontSize: '40px',
+      fontWeight: 500,
       '@media (max-width:768px)': {
         fontSize: '24px',
       },
     },
     h1: {
-      fontFamily: 'Rubik',
-      fontSize: '32px',
-      fontWeight: 700,
+      fontFamily: 'Inter',
+      fontSize: '34px',
+      lineHeight: '120%',
+      fontWeight: 500,
       '@media (max-width:768px)': {
         fontSize: '24px',
       },
@@ -57,9 +63,9 @@ const theme = createTheme({
       fontWeight: 600,
     },
     body: {
-      fontFamily: 'Rubik',
+      fontFamily: 'Inter',
       fontSize: '16px',
-      fontWeight: 600,
+      fontWeight: 500,
     },
     subtitle: {
       fontFamily: 'Montserrat',
@@ -80,19 +86,23 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer></AppContainer>
+      <AppContainer>
+        <LandingPage />
+      </AppContainer>
+      <Toaster
+        position="top-center"
+        containerStyle={{
+          fontFamily: 'Montserrat',
+          fontSize: '16px',
+          fontWeight: 600,
+        }}
+      />
     </ThemeProvider>
   );
 }
 
 const AppContainer = styled('div')(({ theme }) => ({
-  padding: '0',
-  margin: '0 auto',
-  overflowX: 'hidden',
-
-  '@media (max-width: 768px)': {
-    padding: '0 16px',
-  },
+  height: '100vh',
 }));
 
 export default App;
