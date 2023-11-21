@@ -69,6 +69,10 @@ export const FormInput = styled('input')(({ theme }) => ({
   fontSize: '16px',
   padding: '14px 20px',
   outline: 'none',
+
+  '&:focus': {
+    border: `1px solid ${theme.palette.primary.main}`,
+  },
 }));
 
 export default SignupSection;
