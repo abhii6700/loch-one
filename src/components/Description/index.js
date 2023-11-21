@@ -12,8 +12,9 @@ const Description = ({
     <Stack
       gap={2}
       style={{ ...style }}
-      alignContent={align === 'left' ? 'flex-start' : 'flex-end'}
+      alignItems={align === 'left' ? 'start' : 'end'}
     >
+      {icon}
       <Typography
         textAlign={align === 'left' ? 'left' : 'right'}
         variant="h1"

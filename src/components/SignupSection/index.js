@@ -27,7 +27,7 @@ const SignupSection = () => {
 
   return (
     <SignupSectionWrapper>
-      <Stack style={{ width: '60%' }} gap={3}>
+      <Stack style={{ width: window.innerWidth > 768 ? '50%' : '90%' }} gap={3}>
         <Typography variant="large" color={'grey'}>
           Sign up for exclusive access.
         </Typography>
@@ -55,6 +55,10 @@ const SignupSectionWrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   boxShadow:
     '0px 14px 64px -4px rgba(24, 39, 75, 0.12), 0px 8px 22px -6px rgba(24, 39, 75, 0.12)',
+
+  '@media (max-width:768px)': {
+    height: '400px',
+  },
 }));
 
 export const FormInput = styled('input')(({ theme }) => ({

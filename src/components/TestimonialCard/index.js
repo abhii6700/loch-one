@@ -14,7 +14,9 @@ const TestimonialCard = ({ name = '', designation = '', testimonial = '' }) => {
       <Stack gap={2} width={'100%'}>
         <Stack direction={'row'} alignItems={'center'} gap={1}>
           <Typography variant="body">{name}</Typography>
-          <Typography variant="subtitle">{designation}</Typography>
+          <Typography variant="label" color={'tertiary.light'}>
+            {designation}
+          </Typography>
         </Stack>
         <Typography variant="subtitle">{testimonial}</Typography>
       </Stack>

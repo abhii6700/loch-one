@@ -1,6 +1,7 @@
 import EqualizerRoundedIcon from '@mui/icons-material/EqualizerRounded';
 import NotificationsNoneTwoToneIcon from '@mui/icons-material/NotificationsNoneTwoTone';
 import QueryBuilderRoundedIcon from '@mui/icons-material/QueryBuilderRounded';
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Box, Checkbox, Grid, Stack, Typography, styled } from '@mui/material';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,29 +19,45 @@ import NotificationCard from '../NotificationCard';
 import { FormInput } from '../SignupSection';
 const InfoSection = () => {
   return (
-    <InfoSectionWrapper gap={'54px'}>
+    <InfoSectionWrapper gap={'48px'}>
+      {/* NOTIFICATION */}
+
       <SectionLayout
         leftComponent={
-          <Grid tem xs={12} md={4}>
+          <Grid item xs={12} md={5}>
             <Description
+              icon={<NotificationsNoneTwoToneIcon color="white" />}
               title="Get notified when a highly correlated whale makes a move"
               description="Find out when a certain whale moves more than any preset amount on-chain or when a dormant whale you care about becomes active."
             />
           </Grid>
         }
         rightComponent={
-          <Grid tem xs={12} md={6}>
+          <Grid item xs={12} md={6} position={'relative'}>
+            {window.innerWidth > 768 && (
+              <div
+                style={{
+                  position: 'absolute',
+                  width: '30%',
+                  height: '100%',
+                  top: 0,
+                  right: 0,
+                  zIndex: 999,
+                  background:
+                    'linear-gradient(to left, rgba(0, 0, 0, 0.4), transparent)',
+                }}
+              ></div>
+            )}
+
             <Swiper
               slidesPerView={2}
               autoHeight={true}
-              spaceBetween={10}
               freeMode={true}
               grabCursor={true}
               loop={true}
               className="mySwiper"
               style={{
                 margin: 0,
-                paddingRight: '10px',
               }}
             >
               <SwiperSlide>
@@ -121,15 +138,28 @@ const InfoSection = () => {
           </Grid>
         }
       />
+
+      {/* COHORT */}
+
       <SectionLayout
+        direction={window.innerWidth > 768 ? 'row' : 'column-reverse'}
         leftComponent={
-          <Grid tem xs={12} md={5}>
-            <img src={Cohort} width={'85%'}></img>
+          <Grid item xs={12} md={5}>
+            <img
+              src={Cohort}
+              width={window.innerWidth > 768 ? '90%' : '100%'}
+            ></img>
           </Grid>
         }
         rightComponent={
-          <Grid tem xs={12} md={5}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            paddingRight={window.innerWidth > 768 && '48px'}
+          >
             <Description
+              icon={<RemoveRedEyeOutlinedIcon color="white" />}
               align="right"
               title="Watch what the whales are doing"
               description="All whales are not equal. Know exactly what the whales impacting YOUR portfolio are doing."
@@ -151,17 +181,25 @@ const InfoSection = () => {
         Testimonials
       </Typography>
 
+      {/* TESTIMONIALS */}
+
       <SectionLayout
         leftComponent={
-          <Grid item xs={12} md={2}>
-            <img width={'60px'} style={{ marginTop: '40px' }} src={Loch}></img>
-          </Grid>
+          window.innerWidth > 768 && (
+            <Grid item xs={12} md={2}>
+              <img
+                width={'60px'}
+                style={{ marginTop: '40px' }}
+                src={Loch}
+              ></img>
+            </Grid>
+          )
         }
         rightComponent={
-          <Grid tem xs={12} md={10}>
+          <Grid item xs={12} md={10}>
             <Swiper
               style={{ margin: 0, paddingRight: '18px' }}
-              slidesPerView={2}
+              slidesPerView={window.innerWidth > 768 ? 2 : 1}
               autoHeight={true}
               spaceBetween={30}
               freeMode={true}
@@ -178,7 +216,7 @@ const InfoSection = () => {
               <SwiperSlide>
                 <TestimonialCard
                   name="Yash P"
-                  designation="Research, 3poch Crypto Hedge Fund"
+                  designation="Research, 3poch Crypto Hedge"
                   testimonial="“I use Loch everyday now. I don't think I could analyze crypto whale trends markets without it. I'm addicted!”"
                 />
               </SwiperSlide>
@@ -205,7 +243,7 @@ const InfoSectionWrapper = styled(Stack)(({ theme }) => ({
   backgroundColor: '#19191a',
 
   '@media (max-width:768px)': {
-    padding: '24px',
+    padding: '48px 24px',
   },
 }));
 

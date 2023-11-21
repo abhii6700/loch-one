@@ -5,6 +5,7 @@ const SectionLayout = ({
   leftComponent = <div>Left Component</div>,
   rightComponent = <div>Right Component</div>,
   styles,
+  direction = 'row',
 }) => {
   return (
     <Grid
@@ -14,6 +15,7 @@ const SectionLayout = ({
       width={'100%'}
       justifyContent={'space-between'}
       alignItems={'center'}
+      direction={direction}
     >
       {leftComponent}
 
