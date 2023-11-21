@@ -23,7 +23,7 @@ const Description = ({
       </Typography>
       <Typography
         textAlign={align === 'left' ? 'left' : 'right'}
-        variant="body"
+        variant="subtitle"
         color={'#F2F2F2'}
       >
         {description}

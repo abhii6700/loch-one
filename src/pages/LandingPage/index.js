@@ -6,10 +6,10 @@ import InfoSection from '../../components/InfoSection';
 const LandingPage = () => {
   return (
     <LandingPageWrapper container>
-      <Grid item xs={7} height={'100%'}>
+      <Grid item xs={12} sm={8} height={'100%'}>
         <InfoSection />
       </Grid>
-      <Grid item xs={5} height={'100%'}>
+      <Grid item xs={12} sm={4} height={'100%'}>
         <SignupSection />
       </Grid>
     </LandingPageWrapper>

@@ -1,20 +1,24 @@
-import { Stack } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 import React from 'react';
 
 const SectionLayout = ({
   leftComponent = <div>Left Component</div>,
   rightComponent = <div>Right Component</div>,
+  styles,
 }) => {
   return (
-    <Stack
-      direction={'row'}
+    <Grid
+      container
+      gap={{ xs: 6, sm: 0 }}
+      style={{ ...styles }}
       width={'100%'}
       justifyContent={'space-between'}
       alignItems={'center'}
     >
       {leftComponent}
+
       {rightComponent}
-    </Stack>
+    </Grid>
   );
 };
 

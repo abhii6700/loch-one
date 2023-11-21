@@ -66,11 +66,18 @@ const theme = createTheme({
       fontFamily: 'Inter',
       fontSize: '16px',
       fontWeight: 500,
+      '@media (max-width:768px)': {
+        fontSize: '13px',
+      },
     },
     subtitle: {
       fontFamily: 'Montserrat',
-      fontSize: '12px',
+      fontSize: '14px',
       fontWeight: 400,
+
+      '@media (max-width:768px)': {
+        fontSize: '11px',
+      },
     },
     label: {
       fontFamily: 'Montserrat',
@@ -103,6 +110,9 @@ function App() {
 
 const AppContainer = styled('div')(({ theme }) => ({
   height: '100vh',
+  '@media (max-width:768px)': {
+    height: '100%',
+  },
 }));
 
 export default App;

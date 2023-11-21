@@ -27,7 +27,7 @@ const SignupSection = () => {
 
   return (
     <SignupSectionWrapper>
-      <Stack style={{ width: '50%' }} gap={3}>
+      <Stack style={{ width: '60%' }} gap={3}>
         <Typography variant="large" color={'grey'}>
           Sign up for exclusive access.
         </Typography>
