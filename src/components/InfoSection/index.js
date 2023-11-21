@@ -59,7 +59,7 @@ const InfoSection = () => {
               loop={true}
               autoplay={{
                 delay: 4000,
-                disableOnInteraction: true,
+                disableOnInteraction: false,
               }}
               modules={[Autoplay]}
               className="mySwiper"
@@ -214,7 +214,7 @@ const InfoSection = () => {
               loop={true}
               autoplay={{
                 delay: 5000,
-                disableOnInteraction: true,
+                disableOnInteraction: false,
               }}
               modules={[Autoplay]}
               className="mySwiper"
